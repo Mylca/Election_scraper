@@ -1,6 +1,6 @@
 # Election Scraper
 
-This script is used to download election data from [Election results 2017 CZ](https://www.volby.cz/pls/ps2017nss/ps3?xjazyk=CZ) The column "Výběr obce" and save it to a CSV file.
+This script is used to download election data from [Election results 2017 CZ](https://www.volby.cz/pls/ps2017nss/ps3?xjazyk=CZ) the column "Výběr obce" and save it to a CSV file.
 
 ## Requirements
 
@@ -15,7 +15,7 @@ pip install -r requirements.txt
 1. Clone or download this repository:
    ```bash
    git clone https://github.com/Mylca/Election_scraper.git
-   cd election-scraper
+   cd Election_scraperr
    ```
 2. Install the required libraries (if you haven't already):
    ```bash
