@@ -1,6 +1,6 @@
 # Election Scraper
 
-This script is used to download election data from [a specified website](https://www.volby.cz/pls/ps2017nss/ps3?xjazyk=CZ) The column "Výběr obce" and save it to a CSV file.
+This script is used to download election data from [Election results 2017 CZ](https://www.volby.cz/pls/ps2017nss/ps3?xjazyk=CZ) The column "Výběr obce" and save it to a CSV file.
 
 ## Requirements
 
@@ -32,7 +32,7 @@ python scraper.py 'URL' 'output_file.csv'
 
 ### Example:
 ```bash
-python scraper.py "[a specified website](https://www.volby.cz/pls/ps2017nss/ps32?xjazyk=CZ&xkraj=1&xnumnuts=1100)" "praha.csv"
+python scraper.py "https://www.volby.cz/pls/ps2017nss/ps32?xjazyk=CZ&xkraj=1&xnumnuts=1100" "praha.csv"
 ```
 
 If incorrect arguments are provided, the program will display an error message and terminate.
