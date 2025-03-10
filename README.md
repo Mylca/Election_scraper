@@ -15,7 +15,7 @@ pip install -r requirements.txt
 1. Clone or download this repository:
    ```bash
    git clone https://github.com/Mylca/Election_scraper.git
-   cd Election_scraperr
+   cd Election_scraper
    ```
 2. Install the required libraries (if you haven't already):
    ```bash
