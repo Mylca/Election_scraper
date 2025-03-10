@@ -35,11 +35,25 @@ python scraper.py 'URL' 'output_file.csv'
 python scraper.py "https://www.volby.cz/pls/ps2017nss/ps32?xjazyk=CZ&xkraj=1&xnumnuts=1100" "praha.csv"
 ```
 
+#### Expected console output:
+
+```
+Collected municipalities: 57
+Generated URLs: 57
+Downloading election data: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 57/57 [01:58<00:00,  2.09s/url]
+Saved as: praha.csv
+Requests to the server was: 59
+```
+
 If incorrect arguments are provided, the program will display an error message and terminate.
 
 ## Output
 
 The script generates a CSV file containing election data, where each row corresponds to a municipality.
+
+### Example:
+
+
 
 ## Code Structure
 
