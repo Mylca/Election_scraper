@@ -53,7 +53,7 @@ The script generates a CSV file containing election data, where each row corresp
 
 ### Example:
 
-
+[csv_image_example](csv_example.png)
 
 ## Code Structure
 
