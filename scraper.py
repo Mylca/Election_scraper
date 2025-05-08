@@ -10,16 +10,16 @@ discord: Milan K.
 
 """
 
+import argparse
+import csv
+import random
+import sys
+import time
+from urllib.parse import parse_qs, urljoin, urlparse
+
 import requests
 from bs4 import BeautifulSoup
-from urllib.parse import urljoin, urlparse, parse_qs
 from tqdm import tqdm
-import csv
-import time
-import random
-import argparse
-import sys
-
 
 request_count = 0
 
