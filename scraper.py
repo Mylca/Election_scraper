@@ -56,16 +56,25 @@ def save_to_csv(data, filename):
         dict_writer = csv.DictWriter(output_file, fieldnames=keys)
         dict_writer.writeheader()
         dict_writer.writerows(data)
+    return None
 
 
 def random_sleep(min_seconds=1, max_seconds=3):
     # Delay between requests
     wait_time = random.uniform(min_seconds, max_seconds)
     time.sleep(wait_time)
+    return None
 
 
-def get_response(url):
-    # Server status response with error handling
+def get_response(url: str) -> str | None:
+    '''
+    Returns the server response as a string
+    or None if an error occurs
+
+    :param url: The URL to request
+    :return: The server response text or None
+             if an error occurs
+    '''
     try:
         response = requests.get(url)
         response.raise_for_status()
@@ -90,7 +99,21 @@ def get_html(url):
 
 
 def get_relative_urls(html) -> dict:
-    # Create dict with relative urls
+    '''
+    Extracts relative URLs from provided HTML
+
+    Searches for all anchor ('<a>') elements within a
+    'div' element with the ID 'outer' in the given HTML.
+    Returns a dictionary where the keys are the visible
+    text of the links and the values are the corresponding
+    relative URLs. Links with the text 'X' are excluded.
+
+    :param html: BeautifulSoup object representing the parsed
+                 HTML document
+    :return: A dictionary where keys are link text and values
+             are relative URLs.
+    '''
+
     relative_links = {
         a.get_text(): a.get('href')
         for a in html.select('div#outer a')
@@ -100,7 +123,19 @@ def get_relative_urls(html) -> dict:
 
 
 def get_final_urls(links, base_url) -> list:
-    # Save final urls
+    '''
+    Construct absolute URLs from relative links.
+
+    Takes a dictionary of relative links and a base URL,
+    combines them into absolute URLs and returns the list
+    of these URLs.
+
+    :param links: A dictionary where keys are identifiers
+                  and values are relative URLs
+    :param base_url: The base URL to which the relative
+                    links should be joined
+    :return: A list of fully qualified URLs
+    '''
     final_urls = []
     for href in links.values():
         full_url = urljoin(base_url, href)
