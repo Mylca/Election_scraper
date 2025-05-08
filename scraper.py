@@ -19,19 +19,9 @@ import time
 import random
 import argparse
 import sys
-import re
+
 
 request_count = 0
-
-
-def is_valid_url(url):
-    # Checks if the given string is a valid URL format
-    return re.match(r'^https?://(?:www\.)?[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}(?:/\S*)?$', url) is not None
-
-
-def looks_like_filename(arg):
-    # Checks if the argument looks like a filename (e.g., output.csv)
-    return bool(re.match(r'^[\w,\s-]+\.[A-Za-z]{1,4}$', arg))
 
 
 def get_arguments():
@@ -45,16 +35,6 @@ def get_arguments():
     # Check if both arguments are provided
     if not args.url or not args.output_file:
         print('Error: You must specify both the URL and the name of the output file.')
-        sys.exit(1)
-
-    # Detect if arguments are swapped
-    if looks_like_filename(args.url) and is_valid_url(args.output_file):
-        print('Error: It looks like you swapped the arguments. The URL should come first, then the output file.')
-        sys.exit(1)
-
-    # Validate the URL
-    if not is_valid_url(args.url):
-        print('Error: Invalid URL.')
         sys.exit(1)
 
     return args
