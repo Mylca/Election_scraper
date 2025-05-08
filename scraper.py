@@ -46,7 +46,7 @@ def save_to_csv(data, filename):
     # Verify the data is not empty
     if not data:
         print('No file to save.')
-        return
+        return None
 
     # Getting keys (header) from the first record in the data
     keys = data[0].keys() if data else []
